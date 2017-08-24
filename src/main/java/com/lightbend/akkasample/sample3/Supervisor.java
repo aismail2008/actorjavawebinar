@@ -15,7 +15,7 @@ public class Supervisor extends AbstractLoggingActor {
     10,
     Duration.create("10 seconds"),
     DeciderBuilder
-      .match(RuntimeException.class, ex -> escalate())
+      .match(RuntimeException.class, ex -> restart()) // *default*Stop() - resume() - escalate()
       .build()
   );
 
