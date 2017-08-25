@@ -40,7 +40,6 @@ public class Lightswitch extends AbstractFSM<LightswitchState, NoDataItsJustALig
         //our second FSM definition
         when(LightswitchState.on,
                 matchEvent(PowerOff.class,
-                        NoDataItsJustALightswitch.class,
                         (PowerOn, noData) ->
                                 goTo(LightswitchState.off).replying(LightswitchState.off)
                         //here you could use multiline functions,
